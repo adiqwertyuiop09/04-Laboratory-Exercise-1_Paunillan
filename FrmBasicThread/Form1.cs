@@ -22,13 +22,22 @@ namespace FrmBasicThread
 
         public class MyThreadClass
         {
-            public static void threadMethod() 
+            public static void threadMethodLetter() 
             {
                 Thread thread = Thread.CurrentThread;
                 for (int i = 0; i <= 5; i++) 
                 {
-                    Console.WriteLine("Name of Thread: " + thread.Name + " Process = " + i);
+                    Console.WriteLine(thread.Name + " prints number " + i);
+                    Thread.Sleep(1500);
+                }
+            }
 
+            public static void threadMethodNumber()
+            {
+                Thread thread = Thread.CurrentThread;
+                for (char c = 'A'; c <= 'E'; c++)
+                {
+                    Console.WriteLine(thread.Name + " prints letter " + c);
                     Thread.Sleep(1500);
                 }
             }
@@ -40,8 +49,8 @@ namespace FrmBasicThread
             public static void Threads(Label threadlbl)
             {              
                 
-                Thread ThreadA = new Thread(new ThreadStart(MyThreadClass.threadMethod));
-                Thread ThreadB = new Thread(new ThreadStart(MyThreadClass.threadMethod));
+                Thread ThreadA = new Thread(new ThreadStart(MyThreadClass.threadMethodNumber));
+                Thread ThreadB = new Thread(new ThreadStart(MyThreadClass.threadMethodLetter));
 
                 ThreadA.Name = "Thread A";
                 ThreadB.Name = "Thread B";
