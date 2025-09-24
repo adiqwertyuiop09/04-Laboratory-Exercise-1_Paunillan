@@ -33,6 +33,9 @@ namespace FrmBasicThread
 
         }
 
-        
+        public class FrmBasicThread
+        {
+            
+        }
     }
 }
