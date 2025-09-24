@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblthread = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblthread
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(550, 60);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "-Before starting thread-";
+            this.lblthread.AutoSize = true;
+            this.lblthread.Font = new System.Drawing.Font("Microsoft Tai Le", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblthread.Location = new System.Drawing.Point(146, 111);
+            this.lblthread.Name = "lblthread";
+            this.lblthread.Size = new System.Drawing.Size(550, 60);
+            this.lblthread.TabIndex = 0;
+            this.lblthread.Text = "-Before starting thread-";
             // 
             // button1
             // 
@@ -52,7 +52,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Run";
             this.button1.UseVisualStyleBackColor = false;
-      
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -60,7 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblthread);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -70,7 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblthread;
         private System.Windows.Forms.Button button1;
     }
 }

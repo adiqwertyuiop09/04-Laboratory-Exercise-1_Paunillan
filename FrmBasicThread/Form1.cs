@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Security.Cryptography.X509Certificates;
+using System.Drawing.Text;
 
 namespace FrmBasicThread
 {
@@ -25,7 +27,7 @@ namespace FrmBasicThread
                 Thread thread = Thread.CurrentThread;
                 for (int i = 0; i <= 5; i++) 
                 {
-                    Console.WriteLine("Name of Thread: " + thread.Name + " = " + i);
+                    Console.WriteLine("Name of Thread: " + thread.Name + " Process = " + i);
 
                     Thread.Sleep(1500);
                 }
@@ -35,7 +37,29 @@ namespace FrmBasicThread
 
         public class FrmBasicThread
         {
-            
+            public static void Threads(Label threadlbl)
+            {              
+                
+                Thread ThreadA = new Thread(new ThreadStart(MyThreadClass.threadMethod));
+                Thread ThreadB = new Thread(new ThreadStart(MyThreadClass.threadMethod));
+
+                ThreadA.Name = "Thread A";
+                ThreadB.Name = "Thread B";
+
+                ThreadA.Start();
+                ThreadB.Start();
+
+                ThreadA.Join();
+                ThreadB.Join();
+
+                Console.WriteLine("- End of Thread -");
+                threadlbl.Text = "- End of Thread -";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmBasicThread.Threads(lblthread);
         }
     }
 }
